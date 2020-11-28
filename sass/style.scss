@@ -1,0 +1,698 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+@import '_variables';
+@import '_mixin';
+@import '_extend';
+@import '_keyframes';
+
+
+
+
+body{
+	font-family: $font;
+}
+
+
+nav{
+	background-color: $overlay;
+	@include paddingY(0);
+.navbar-nav{
+
+	.nav-item{
+
+	@include paddingX(15px);
+
+
+ .nav-link {
+    color:#cccccc !important;
+    font-size: 20px;
+    font-weight: 600;
+    @include paddingY(50px);
+    @include paddingX(0);
+    position: relative;
+
+    &::after{
+    	content:"";
+    	width: 100%;
+    	height: 3px;
+    	background-color:$themeColor;
+    	position: absolute;
+    	left: 0;
+    	bottom: -3px;
+    	transform: scaleX(0);
+    	@include transition(0.3s,ease);
+
+    }
+   
+
+    &:hover{
+    	color:$themeColor !important;
+
+    	&::after{
+    		transform: scaleX(1);
+
+    	}
+    }
+}
+}
+}
+}
+
+/***************** search *********/
+.dropdown{
+	@include paddingY(50px);
+	.search{
+		text-decoration: none;
+		color:#cccccc !important;
+    	font-size: 20px;
+    	font-weight: 600;
+	}
+}
+
+.dropdown-menu{
+	background-color: transparent;
+	bottom: -40px;
+	width: 250px;
+	right: 0;
+	left: auto;
+	 @include paddingY(0);
+    @include paddingX(0);
+	form{
+		background-color: #fff;
+		input{
+		border-radius: 0;
+		@include border(2px,#fff);
+		}
+		button{
+			background-color:$themeColor;
+			text-decoration: none;
+			color:#cccccc !important;
+    		font-size: 20px;
+    		font-weight: 600;
+    		border-radius: 0;
+    		@include border(2px,#fff);
+		}
+
+	}
+}
+
+
+/************* slider ***********/
+.slider{
+.carousel{
+.carousel-inner{
+.carousel-item{
+	img{}
+.carousel-caption{
+	text-align: right;
+	bottom: 50%;
+	@include translate(0,50%);
+	
+	h5{
+		font-size: 60px;
+		font-weight: 400;
+		color:$themeColor;
+		text-transform: uppercase;
+		
+	}
+	p{
+		font-size: 60px;
+		font-weight: 700;
+		color:#fff;
+		text-transform: uppercase;
+
+	}
+	.btn-custom{
+		margin: 40px 10px;
+		background-color: $themeColor;
+		color: #fff;
+		font-weight: 600;
+		font-size: 15px;
+		border-radius: 0;
+		text-transform: uppercase;
+		@include border(2px,$themeColor);
+		@include paddingY(11px);
+   		@include paddingX(42px);
+
+   		&:hover{
+   			background-color: transparent !important;
+   			@include border(2px,#fff);
+   		}
+	}
+	}
+}
+}
+.carousel-control-prev{}
+.carousel-control-next{}
+}
+}
+
+
+/* social-list */
+.social-list{
+	li{
+		padding: 5px;
+		a{
+			width: 40px;
+			height: 40px;
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			text-decoration: none;
+			background-color:transparent;
+			color: $themeColor;
+			@extend %border;
+
+			@include transition(0.3s,ease);
+
+
+			&:hover{
+			background-color:$themeColor;
+			color: #fff;
+			border: 1px solid $themeColor;
+			}
+
+		}
+	}
+}
+
+
+/*** heading ***/
+.heading{
+	text-align: center;
+	padding-bottom: 75px;
+	h1{
+		color: $textColor;
+		font-size: 43px;
+		font-family: $font;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.line{
+	position: relative;
+    display: block;
+    max-width: 500px;
+    height: 2px;
+    background-color:$themeColor;
+    margin:0 auto;
+
+    &::after{
+    	position:absolute;
+    	content:"";
+    	width: 50px;
+    	height: 6px;
+    	background-color: $themeColor;
+    	right: 50%;
+    	bottom: 50%;
+
+    	@include translate(50%,50%);
+
+    	animation-name: lineMove;
+    	animation-duration: 20s;
+    	animation-timing-function:linear;
+    	animation-direction: alternate;
+    	
+    }
+	}
+}
+
+
+
+/**************** section ***********/
+section{
+	@include paddingY(100px);
+ }
+ p{
+ 	color: $textColor;
+ 	font-size: 12px;
+ }
+
+
+
+ .about{
+ 	.about-img{
+ 		img{}
+ 	}
+ 	.about-content{
+ 		@include paddingX(100px);
+ 		display: flex;
+ 		flex-direction: column;
+ 		justify-content: space-between;
+ 		height: 100%;
+
+ 		ul{
+ 			padding-top: 17px;
+ 			li{
+
+ 				span{
+ 				color: $textColor;
+ 				font-size: 12px;
+ 				font-weight: 600;
+ 				}
+ 				.progress{
+ 					background-color: $gray;
+ 					.progress-bar{
+ 						background-color: $themeColor;
+ 						animation-name: progress;
+ 						animation-duration: 20s;
+ 						animation-iteration-count: 1;
+
+ 					}
+ 				}
+
+ 				
+ 				span.count{
+
+
+ 					background-color: $themeColor;
+ 					width: 46px;
+ 					display: inline-block;
+ 					height: 26px;
+ 					color:#fff;
+ 					text-align: center;
+ 					line-height: 26PX;
+ 					position: relative;
+
+ 					&::after{
+
+ 						    content: "";
+    						left: -5px;
+   							 position: absolute;
+    						top: 39%;
+   						 	transform: translate(-50%);
+    						border-top: 4px solid #ff000000;
+  						 	border-right: 10px solid $themeColor;
+  						  	border-bottom: 4px solid #ff000000;
+}
+ 				}
+ 			}
+ 		}
+
+ 	}
+ }
+
+
+/****************** service  **************/
+.service-section{
+	.service{
+
+		@include border(2px,$gray);
+		@include paddingY(40px);
+   		@include paddingX(35px);
+   		text-align: center;
+   		margin-bottom: 30px;
+   		@include transition(0.4s,ease);
+   		position: relative;
+   		overflow: hidden; 
+
+		.tringle{}
+		i{ 
+			background-color: #999;
+			color: #fff;
+    		width: 60px;
+    		display: block;
+    		height: 60px;
+   		 	border-radius: 50%;
+    		margin: auto;
+    		line-height: 60px;
+    		text-align: center;
+    		font-size: 30px;
+    		@include transition(0.4s,ease);
+
+		}
+		h2{
+	 	font-size: 17px;
+    	font-weight: 800;
+    	color: $textColor;
+    	margin: 35px 0;
+    	@include transition(0.4s,ease);
+}
+		
+		p{
+		font-size: 13px;
+    	font-weight: 400;
+    	color: $textColor;
+    	margin: 0;
+    	@include transition(0.4s,ease);
+		}
+
+		&::after{
+			content: "";
+			position: absolute ;
+			width: 0;
+			height: 0;
+			top: 0;
+			left: 0;
+			border-top: 2px solid $themeColor ;
+			border-left: 2px solid $themeColor ;
+			@include transition(0.4s,ease);
+			opacity: 0;
+			
+		}
+		&::before{
+			content: "";
+			width: 85px;
+			height: 250px;
+			top: -130px;
+			left: 0;
+			position: absolute;
+			background-color: #ffffff;
+			transform: rotate(45deg);
+			opacity: 0;
+			@include transition(0.3s,ease);
+
+
+		}
+
+		&:hover{
+			background-color: $themeColor;
+			h2,p{
+				color: #fff;
+			}
+			i{
+				background-color: #fff;
+				color: $themeColor;
+			}
+			&::after{
+			
+			width: 50px ;
+			height: 50px ;
+			opacity: 1;
+			
+		}
+		&::before{
+			
+			
+			opacity: 1;
+			
+		}
+
+		}
+		}
+
+	}
+
+
+/******************  statistic  ********************/
+.statistic{
+	background-image: url(../images/stat.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+
+	&::before{
+		content:"" ;
+		position:absolute;
+		background-color: $overlay;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	.container{
+		position: relative;
+
+		.row{
+			position: relative;
+
+			&::before{
+				content:"" ;
+				position: absolute;
+    			width: 100%;
+    			height: 3px;
+    			bottom: 47%;
+    			background: #fff;
+    			transform: translateY(47%) scaleX(0.7);
+    			z-index: 0;
+
+			}
+		}
+	}
+	.heading h1{
+		color: #fff;
+	}
+	.statis{
+		text-align: center;
+		position: relative;
+		
+		h3{
+			color: #fff;
+			font-size: 35px;
+    		font-weight: 600;
+		}
+		i{
+			background-color:#fff;
+			color: $themeColor;
+    		width: 60px;
+    		display: block;
+    		height: 60px;
+   		 	border-radius: 50%;
+    		line-height: 60px;
+    		font-size: 30px;
+    		text-align: center;
+    		margin: auto;
+    		margin-top: 30px;
+    		margin-bottom: 30px;
+    		
+		}
+		h2{
+			color: #fff;
+			font-size: 22px;
+   		 	font-weight: 600;
+		}
+	}
+}
+
+
+/************** lifestory ***************/
+.lifestory{
+	background-color: $textColor;
+	.lifestory-content{
+		.heading{
+			h1{
+				color: #fff;
+			}
+			
+		}
+		p{
+			color: #fff;
+		}
+	}
+}
+
+
+/************** my-work *****************/
+.my-work{
+	ul{
+
+		li{
+			padding: 0 30px 40px 40px;
+			button{
+				 	  
+    				background: #fff;
+    				border: none;
+    				@include transition(0.3s,ease);
+
+    				&:hover{
+    					background:$themeColor;
+    					color: #fff;
+    				}
+
+			}
+		}
+	}
+}
+
+
+
+
+.work{
+	position: relative;
+	margin: 15px;
+
+	img{
+		
+	}
+	a{
+		i{
+			background-color:$themeColor;
+			color: #fff;
+    		width: 40px;
+    		display: block;
+    		height: 40px;
+   		 	border-radius: 50%;
+    		line-height: 40px;
+    		font-size: 20px;
+    		text-align: center;
+    		margin: auto;
+    		position: absolute;
+			top: 10px;
+	    	right: 25px;
+	    	@include transition(0.4s,ease-out);
+	    	opacity: 0;
+
+			}
+	}
+	h5{
+		position: absolute;
+		bottom: 30px;
+    	color: #fff;
+    	left: 25px;
+    	@include transition(0.4s,ease-out);
+    	opacity: 0;
+
+    	
+		}
+	p{
+		position: absolute;
+		bottom: 0;
+    	color: #fff;
+    	left: 25px;
+    	@include transition(0.4s,ease-out);
+    	opacity: 0;
+
+    	}
+}
+
+
+
+.work:hover  h5{
+	padding-top:10px;
+	opacity: 1;
+}
+.work:hover  p{
+	padding-top:10px;
+	opacity: 1;
+}
+.work:hover i{
+	padding-top:0px;
+	opacity: 1;
+}
+
+
+
+
+/******************** touch ********************/
+.touch{
+
+	input{
+			border: 0;
+    		border-bottom: 1px solid $textColor;
+    		font-size: 30px;
+
+		}
+
+		textarea{
+			border: 0;
+    		border-bottom: 1px solid $textColor;
+    		
+		}
+		.btn{
+			background-color: $themeColor;
+			color:#fff;
+    		font-size: 20px;
+    		border: 0;
+		}
+	p{
+		font-size: 13px;
+    	font-weight: 500;
+    	color: $textColor;
+    	text-align: center;
+    	padding-bottom: 38px;
+
+	}
+	from{
+		label{}
+
+		
+	}
+}
+
+
+/***************** tweet ***************/
+.tweet{
+
+	background-image: url(../images/tweet.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+
+	&::before{
+		content:"" ;
+		position:absolute;
+		background-color: $overlay;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	.heading{
+		h1{
+			position: relative;
+			color: #fff;
+		}
+		
+	}
+
+	p{
+		position: relative;
+		color: #fff;
+		font-size: 13px;
+    	font-weight: 500;
+    	text-align: center;
+		a{
+			color: $themeColor;
+		}
+	}
+}
+
+/************** address-section ********************/
+.address-section{
+	position: relative;
+
+}
+.container{
+
+	.address{
+		background-color: #ff9900c9;
+    	position: absolute;
+    	z-index: 0;
+    	bottom: 35%;
+    	right: 200px;
+
+		p{
+		color: #fff;
+		font-size: 13px;
+    	font-weight: 500;
+    	@include paddingY(4px);
+   		@include paddingX(25px);
+			strong{}
+		}
+	}
+}
+
+
+/******************* footer **************/
+footer{
+	background-color: $themeColor;
+	@include paddingY(30px);
+   	@include paddingX(0px);
+	p{
+		color: $textColor;
+		text-align: center;
+		font-weight: 600;
+    	font-size: 13px;
+		a{
+			color: #fff;
+		
+		}
+	}
+}
+
+
+
+
